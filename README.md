@@ -32,7 +32,7 @@ Then, you can run the application with the following command:
 If you're going to do a lot of editing, you might prefer to run it with
 nodemon, which will restart the server every time your source files change.
 
-  PORT=4000 ./node_modules/.bin/nodemon -e 'js,html,yaml,css' index.js
+  IP='localhost' PORT=4000 ./node_modules/.bin/nodemon -e 'js,html,yaml,css' index.js
 
 To update the blog, you'll be editing and adding `.yaml` files in the
 `data/updates` directory. Before you get into that, you'll likely want
@@ -51,4 +51,9 @@ Go to the following link https://devcenter.heroku.com/articles/getting-started-w
 
 * Then create an app on Heroku: `heroku create`, and it'll generate a random name for your app for you unless you add params like `heroku create blah`, and it'll create blah.herokuapp.com for you.
 * Then deploy the code: `git push heroku master`
+* You'll likely want to set up your environment variables `IP` and `PORT`. The latter is set on Heroku by default. To set `IP`, do something like
+```
+heroku config:set IP=serene-forest-9048.herokuapp.com
+```
+where that IP is for my app.
 * You can now access your site by opening the link (eg blah.herokuapp.com) in your browser or by typing `heroku open` on your command line.
